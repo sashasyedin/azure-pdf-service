@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfService.Client", "src\Pd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfService.ArmTemplates", "deploy\PdfService.ArmTemplates\PdfService.ArmTemplates.deployproj", "{81ECA6B6-9FAB-4831-B1CF-7AF1284EE92E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{5DBB9048-6683-436D-AF90-80F9776D5FAB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{5DBB9048-6683-436D-AF90-80F9776D5FAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
