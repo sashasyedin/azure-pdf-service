@@ -3,7 +3,7 @@ namespace PdfService.Models
     public class InvoiceLineModel
     {
         public string ProductName { get; set; }
-        public string Quantity { get; set; }
-        public string TotalAmount { get; set; }
+        public decimal Quantity { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }

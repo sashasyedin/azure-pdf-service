@@ -1,0 +1,56 @@
+@model PdfService.Models.InvoiceModel
+
+<html>
+<head>
+    <link href="~/css/invoice.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <img src="~/img/logo.png" style="width:100%; max-width:300px;" />
+                        </td>
+                        <td>
+                            Invoice #: @Model.InvoiceNumber
+                            <br> Created: @Model.InvoiceDate.ToShortDateString()
+                            <br> Due: @Model.InvoiceDueDate.AddDays(30).ToShortDateString()
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="heading ">
+            <td>
+                Item
+            </td>
+            <td>
+                Price
+            </td>
+        </tr>
+
+        @foreach (var item in Model.Lines)
+        {
+            <tr class="item">
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    $ @item.TotalAmount
+                </td>
+            </tr>
+        }
+
+        <tr class="total ">
+            <td></td>
+            <td>
+                Total: @Model.Lines.Sum(i => i.TotalAmount)
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
