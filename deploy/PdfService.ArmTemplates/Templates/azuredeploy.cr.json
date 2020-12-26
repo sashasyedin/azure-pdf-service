@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "type": "string",
+      "allowedValues": [
+        "Development",
+        "Test",
+        "Production"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "sharedLinuxResourceGroupName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "linuxAppServicePlanName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "containerRegistry:name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "containerRegistry:password": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pdfService:appName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pdfService:dockerImage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pdfService:alwaysOn": {
+      "type": "bool"
+    },
+    "pdfService:httpsOnly": {
+      "type": "bool"
+    }
+  },
+  "variables": {
+  },
+  "resources": [
+    {
+      "type": "Microsoft.ContainerRegistry/registries",
+      "apiVersion": "2020-11-01-preview",
+      "name": "[parameters('containerRegistry:name')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Basic",
+        "tier": "Basic"
+      },
+      "properties": {
+        "adminUserEnabled": true,
+        "policies": {
+          "quarantinePolicy": {
+            "status": "disabled"
+          },
+          "trustPolicy": {
+            "type": "Notary",
+            "status": "disabled"
+          },
+          "retentionPolicy": {
+            "days": 7,
+            "status": "disabled"
+          }
+        },
+        "encryption": {
+          "status": "disabled"
+        },
+        "dataEndpointEnabled": false,
+        "publicNetworkAccess": "Enabled",
+        "networkRuleBypassOptions": "AzureServices",
+        "zoneRedundancy": "Disabled"
+      }
+    }
+  ],
+  "outputs": {}
+}

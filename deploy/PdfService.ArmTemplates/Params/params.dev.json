@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "value": "Development"
+    },
+    "location": {
+      "value": "West Europe"
+    },
+    "sharedLinuxResourceGroupName": {
+      "value": "rg-whatever-shared-we-001"
+    },
+    "linuxAppServicePlanName": {
+      "value": "plan-shared-linux-we"
+    },
+    "containerRegistry:name": {
+      "value": "crwhateverdevwe001"
+    },
+    "pdfService:appName": {
+      "value": "app-pdfservice-dev-we-001"
+    },
+    "pdfService:dockerImage": {
+      "value": "pdfservice:latest"
+    },
+    "pdfService:alwaysOn": {
+      "value": true
+    },
+    "pdfService:httpsOnly": {
+      "value": true
+    }
+  }
+}
