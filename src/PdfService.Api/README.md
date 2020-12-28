@@ -1,4 +1,4 @@
-# PDF Service
+# PDF Service API
 
 This is a Docker based service that accepts web requests posting domain specific data models or pure HTML to be converted into PDF.
 

@@ -2,6 +2,7 @@
 
 An Azure & Docker based service for generating PDF documents.
 
-[API](src/PdfService.Api/README.md)
+See the following README files for additional information:
 
-[ARM Templates](deploy/PdfService.ArmTemplates/README.md)
+- [API](src/PdfService.Api/README.md)
+- [ARM Templates](deploy/PdfService.ArmTemplates/README.md)
