@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfService.Models", "src\PdfService.Models\PdfService.Models.csproj", "{A4E1B42C-ED31-417C-80BC-2F433C04AB08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfService", "src\PdfService\PdfService.csproj", "{83A8F99E-DF4A-44BC-956D-2041E078871E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfService.Api", "src\PdfService.Api\PdfService.Api.csproj", "{83A8F99E-DF4A-44BC-956D-2041E078871E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfService.Client", "src\PdfService.Client\PdfService.Client.csproj", "{CCDA6FB6-666C-44E2-9858-31F8229A6AAD}"
 EndProject

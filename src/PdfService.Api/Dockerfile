@@ -16,19 +16,19 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY "PdfService/PdfService.csproj" "PdfService/"
+COPY "PdfService.Api/PdfService.Api.csproj" "PdfService.Api/"
 COPY "PdfService.Models/PdfService.Models.csproj" "PdfService.Models/"
-RUN dotnet restore "PdfService/PdfService.csproj"
-COPY "PdfService/." "PdfService/"
+RUN dotnet restore "PdfService.Api/PdfService.Api.csproj"
+COPY "PdfService.Api/." "PdfService.Api/"
 COPY "PdfService.Models/." "PdfService.Models/"
-WORKDIR /src/PdfService
+WORKDIR /src/PdfService.Api
 
-RUN dotnet build "PdfService.csproj" -c Release -o /app/build
+RUN dotnet build "PdfService.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PdfService.csproj" -c Release -o /app/publish
+RUN dotnet publish "PdfService.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "PdfService.dll"]
+ENTRYPOINT ["dotnet", "PdfService.Api.dll"]

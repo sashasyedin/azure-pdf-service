@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 
-namespace PdfService
+namespace PdfService.Api
 {
     public class Startup
     {

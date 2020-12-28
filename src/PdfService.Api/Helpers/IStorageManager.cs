@@ -1,7 +1,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace PdfService.Helpers
+namespace PdfService.Api.Helpers
 {
     public interface IStorageManager
     {

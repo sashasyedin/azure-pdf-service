@@ -1,13 +1,13 @@
 ﻿using jsreport.AspNetCore;
 using jsreport.Types;
 using Microsoft.AspNetCore.Mvc;
-using PdfService.Helpers;
+using PdfService.Api.Helpers;
 using PdfService.Models;
 using RazorLight;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PdfService.Controllers
+namespace PdfService.Api.Controllers
 {
     public class InvoiceController : Controller
     {
